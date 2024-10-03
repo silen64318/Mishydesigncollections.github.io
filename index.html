@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mishy Designs - Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.css"/>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Mishy Designs Logo">
+        </div>
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Search for products...">
+            <button id="search-btn">Search</button>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="shop.html">Shop</a>
+                    <ul class="dropdown">
+                        <li><a href="#">Abayas</a></li>
+                    </ul>
+
+                </li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title animate-on-scroll">Welcome to <span>Mishy Designs</span></h1>
+            <p>Explore our elegant abayas, blending tradition with modern design.</p>
+            <a href="shop.html" class="shop-btn">Shop Now</a>
+        </div>
+    </section> 
+
+    <!-- Animated Background -->
+    <div class="animated-background"></div>
+
+
+    <!-- Featured Product Section -->
+    <section class="featured">
+        <h2>Featured Product</h2>
+        <div class="featured-item">
+            <img src="abaya-featured.jpg" alt="Elegant Maroon-white Abaya">
+            <h3>Elegant Maroon-white Abaya</h3>
+            <a href="shop.html" class="shop-btn">Shop Now</a>
+        </div>
+    </section> 
+    
+    <script>
+    $(document).ready(function() {
+        $('.carousel-inner').slick({
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            dots: true,
+
+            arrows: true
+        }); 
+
+        // Scroll animation for hero title
+        function isInViewport(element) {
+            const rect = element.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+            );
+        } 
+
+        function checkVisibility() {
+            const elements = document.querySelectorAll('.animate-on-scroll');
+            elements.forEach(el => {
+                if (isInViewport(el)) {
+                    el.classList.add('visible');
+
+                }
+            });
+        } 
+
+        window.addEventListener('scroll', checkVisibility);
+        window.addEventListener('load', checkVisibility); // Trigger on page load 
+
+        $('#search-btn').on('click', function() {
+            var query = $('input[type="text"]').val();
+            alert('Searching for: ' + query);
+        });
+    });
+</script>
+
+    <!-- Abaya Collection -->
+    <section class="products">
+        <h2>Our Abaya Collection</h2>
+        <div class="carousel">
+            <div class="carousel-inner">
+                <div class="product-item">
+
+                    <img src="abaya1.jpg" alt="Pearl Pink Abaya">
+                    <h3>Pearl Pink Abaya</h3>
+                    <a href="shop.html" class="shop-btn">Shop Now</a>
+                </div>
+                <div class="product-item">
+                    <img src="abaya2.jpg" alt="Beautiful Floral Abaya">
+                    <h3>Beautiful Floral Abaya</h3>
+                    <a href="shop.html" class="shop-btn">Shop Now</a>
+                </div>
+                <div class="product-item">
+                    <img src="abaya3.jpg" alt="Ocean Gradient Abaya">
+                    <h3>Ocean Gradient Abaya</h3>
+                    <a href="shop.html" class="shop-btn">Shop Now</a>
+                </div>
+
+                <div class="product-item">
+                    <img src="abaya4.jpg" alt="Crimson Red Abaya">
+                    <h3>Crimson Red Abaya</h3>
+                    <a href="shop.html" class="shop-btn">Shop Now</a>
+                </div>
+                <div class="product-item">
+                    <img src="abaya5.jpg" alt="Royal Green Abaya">
+                    <h3>Royal Green Abaya</h3>
+                    <a href="shop.html" class="shop-btn">Shop Now</a>
+                </div>
+                <div class="product-item">
+                    <img src="abaya6.jpg" alt="Royal Blue Abaya">
+                    <h3>Royal Blue Abaya</h3>
+                    <a href="shop.html" class="shop-btn">Shop Now</a>
+                </div>
+                  <div class="product-item">
+
+                    <img src="abaya7.jpg" alt="Plain Print Abaya">
+                    <h3>Plain Print Abaya</h3>
+                    <a href="shop.html" class="shop-btn">Shop Now</a>
+                </div>
+                <div class="product-item">
+                    <img src="abaya8.jpg" alt="Champagne Gold Abaya">
+                    <h3>Champagne Gold Abaya</h3>
+                    <a href="shop.html" class="shop-btn">Shop Now</a>
+                </div>
+                <div class="product-item">
+                    <img src="abaya9.jpg" alt="Timeless Hues Abaya">
+                    <h3>Timeless Hues Abaya
+                    
+</h3>
+                    <a href="shop.html" class="shop-btn">Shop Now</a>
+
+                </div>
+                <div class="product-item">
+                    <img src="abaya10.jpg" alt="Royal Chiffon Abaya">
+                    <h3>Royal Chiffon Abaya</h3>
+                    <a href="shop.html" class="shop-btn">Shop Now</a>
+                </div>
+                <div class="product-item">
+                    <img src="abaya11.jpg" alt="Classic Essence Abaya">
+                    <h3>Classic Essence Abaya</h3>
+                    <a href="shop.html" class="shop-btn">Shop Now</a>
+                </div>
+                <div class="product-item">
+                    <img src="abaya12.jpg" alt="Salmon Red Abaya">
+                    <h3>Salmon Red Abaya</h3>
+                    <a href="shop.html" class="shop-btn">Shop Now</a>
+
+                </div>
+                <div class="product-item">
+                    <img src="abaya13.jpg" alt="Calm Waves Abaya">
+                    <h3>Calm Waves Abaya</h3>
+                    <a href="shop.html" class="shop-btn">Shop Now</a>
+                </div>
+                <div class="product-item">
+                    <img src="abaya14.jpg" alt="Saphire Blue Abaya">
+                    <h3>Sapphire Blue Abaya</h3>
+                    <a href="shop.html" class="shop-btn">Shop Now</a>
+                </div>
+                <div class="product-item">
+                    <img src="abaya15.jpg" alt="Glossy Pink Abaya">
+                    <h3>Glossy Pink Abaya</h3>
+                    <a href="shop.html" class="shop-btn">Shop Now</a>
+                </div>
+                <div class="product-item">
+
+                    <img src="abaya16.jpg" alt="Sky Blue Abaya">
+                    <h3>Sky Blue Abaya</h3>
+                    <a href="shop.html" class="shop-btn">Shop Now</a>
+                </div>
+                <div class="product-item">
+                    <img src="abaya17.jpg" alt="Emerald Green Abaya">
+                    <h3>Emerald Green Abaya</h3>
+                    <a href="shop.html" class="shop-btn">Shop Now</a>
+                </div>
+                <div class="product-item">
+                    <img src="abaya18.jpg" alt="Almond Brown Abaya">
+                    <h3>Almond Brown Abaya</h3>
+                    <a href="shop.html" class="shop-btn">Shop Now</a>
+                </div>
+                <div class="product-item">
+                    <img src="abaya19.jpg" 
+
+alt="Silk Ivory White Abaya">
+                    <h3>Silk Ivory White Abaya</h3>
+                    <a href="shop.html" class="shop-btn">Shop Now</a>
+                </div>
+                <div class="product-item">
+                    <img src="abaya20.jpg" alt="Tangerine Noir Abaya">
+                    <h3>Tangerine Noir Abaya</h3>
+                    <a href="shop.html" class="shop-btn">Shop Now</a>
+                </div>
+            </div>
+        </div>
+    </section> 
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <h2>What Our Customers Say</h2>
+        <div class="testimonial">
+            <p>"Absolutely love my new abaya! 
+
+The quality is amazing and premium." - Hamida.</p>
+        </div>
+        <div class="testimonial">
+            <p>"The best abaya collection I've seen so far!" – Fatima A.</p>
+        </div>
+        <div class="testimonial">
+            <p>"High quality and beautiful designs!" – Aisha M.</p>
+        </div>
+    </section> 
+
+    <footer>
+        <p>&copy; 2024 Mishy Designs. All rights reserved.</p>
+        <div class="social-links">
+            <a href="https://www.instagram.com/mishy_design8"><img src="instagram-icon.png" alt="Instagram"></a>
+            <a href="https://
+
+chat.whatsapp.com/Iquj8ZbPYqOB1SbtVuP0zD?fbclid=PAZXh0bgNhZW0CMTEAAabKQ0-jPWHkMnRymgX5_tnGQSQ0-wiUvm4oQSwqxs-JKHPdJQYQ8KC-Rjk_aem_h1QbcgqFilRH7-kJmlHrgA"><img src="whatsapp-icon.png" alt="WhatsApp"></a>
+        </div>
+    </footer> 
+
+    <script>
+        $(document).ready(function() {
+            $('.carousel-inner').slick({
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 2000,
+                dots: true,
+                arrows: true,
+                responsive: [
+                    {
+
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 2
+                        }
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            slidesToShow: 1
+                        }
+                    }
+                ]
+            }); 
+
+            // Search functionality
+            $('#search-btn').on('click', function() {
+                var query = $('#search-input').val();
+                alert('Searching for: ' + query); // Replace with actual search functionality
+            });
+        });
+
+    </script>
+</body>
+<script>
+    $(document).ready(function() {
+        // Slick carousel initialization
+        $('.carousel-inner').slick({
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            dots: true,
+            arrows: true
+        });
+        
+        // Scroll animation for hero title
+        function isInViewport(element) {
+            const rect = element.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+
+            );
+        }
+
+        function checkVisibility() {
+            const elements = document.querySelectorAll('.animate-on-scroll');
+            elements.forEach(el => {
+                if (isInViewport(el)) {
+                    el.classList.add('visible');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', checkVisibility);
+        window.addEventListener('load', checkVisibility); // Trigger on page load
+
+        // Search functionality
+        $('#search-btn').on('click', function() {
+            var query = $
+
+('input[type="text"]').val();
+            alert('Searching for: ' + query);
+        });
+    });
+</script>
+</html>
