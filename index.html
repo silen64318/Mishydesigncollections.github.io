@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mishy Designs - Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.css"/>
+    <script src="scripts.js"></script>
+</head>
+
+<body>
+  <header>
+        <div class="logo">
+            <img src="logo.png" alt="Mishy Designs Logo">
+  <ul></ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+
+        </div>
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Search for products...">
+            <button id="search-btn">Search</button>
+        </div>
+        <div class="background-image"></div> <!-- Background image div -->
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title animate-on-scroll">Welcome to <span>Mishy Designs</span></h1>
+            <p>Explore our elegant abayas, blending tradition with modern design.</p>
+            <a href="shop.html" class="shop-btn">Shop Now</a>
+        </div>
+    </section>
+    
+    <!-- Animated Background -->
+    <div class="animated-background"></div>
+
+
+    <!-- Featured Product Section -->
+    <section class="featured">
+        <h2>Featured Product</h2>
+        <div class="featured-item">
+            <img src="abaya-featured.jpg" alt="Elegant Maroon-white Abaya">
+            <h3>Elegant Maroon-white Abaya</h3>
+            <a href="shop.html" class="shop-btn">Shop Now</a>
+        </div>
+    </section> 
+    
+    <script>
+    $(document).ready(function() {
+        $('.carousel-inner').slick({
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            dots: true, 
+
+            arrows: true
+        }); 
+
+        // Scroll animation for hero title
+        function isInViewport(element) {
+            const rect = element.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+            );
+        } 
+
+        function checkVisibility() {
+            const elements = document.querySelectorAll('.animate-on-scroll');
+            elements.forEach(el => {
+                if (isInViewport(el)) {
+                    el.classList.add('visible'); 
+
+                }
+            });
+        } 
+
+        window.addEventListener('scroll', checkVisibility);
+        window.addEventListener('load', checkVisibility); // Trigger on page load 
+
+        $('#search-btn').on('click', function() {
+            var query = $('input[type="text"]').val();
+            alert('Searching for: ' + query);
+        });
+    });
+</script>
+
+    <!-- Liquid Flow Transition Section -->
+    <section class="liquid-flow"></section>
+
+    <!-- Discover Our Products Section -->
+    <section class="discover-products">
+        <h2>Discover Our Products</h2>
+        <div class="product-grid">
+            <div class="product-item fade-in">
+                <img src="abaya.jpg" alt="Abayas">
+                <p>Abayas</p>
+            <a href="shop.html" class="shop-btn">Shop Now</a>
+        </div>
+            </div>
+            <div class="product-item fade-in">
+                <img src="scarf.jpg" alt="Scarfs">
+                <p>Scarfs</p>
+                  <a href="shop.html" class="shop-btn">Shop Now</a>
+            </div>
+            <div class="product-item fade-in">
+                <img src="bag.jpg" alt="Bags">
+                <p>Bags</p>
+                  <a href="shop.html" class="shop-btn">Shop Now</a>
+            </div>
+            <div class="product-item fade-in">
+                <img src="necklace.jpg" alt="Necklaces">
+                <p>Necklaces</p>
+                  <a href="shop.html" class="shop-btn">Shop Now</a>
+            </div>
+        </div>
+    </section>
+
+<!-- Worldwide Delivery Section -->
+<section class="worldwide-delivery fade-background">
+    <h2>Worldwide Delivery</h2>
+    <p>We deliver our products worldwide with love and care. Shop with us and experience reliable and timely delivery to your doorstep!</p>
+</section>
+
+    <footer>
+        <p>&copy; 2024 Mishy Designs. All rights reserved.</p>
+        <div class="social-links">
+            <a href="https://www.instagram.com/mishy_design8"><img src="instagram-icon.png" alt="Instagram"></a>
+            <a href="https://chat.whatsapp.com/Iquj8ZbPYqOB1SbtVuP0zD"><img src="whatsapp-icon.png" alt="WhatsApp"></a>
+        </div>
+    </footer>
+
+</body>
+</html>
